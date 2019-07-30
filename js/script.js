@@ -16,7 +16,7 @@ $(document).ready(sizeContent);
 $(window).resize(sizeContent);
 
 $(window).scroll(function() {
-  if ($(window).scrollTop() >=  $(".banner").offset().top) {
+  if ($(window).scrollTop() >= 80) {
     $('body').addClass('fixed');
   } else {
     $('body').removeClass('fixed');
