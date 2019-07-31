@@ -60,13 +60,17 @@ $(document).ready(function(){
     return this.href == location.href.replace(/#.*/, "");
   }).attr("aria-current", "true");
 
- $('.homebanner').slick({
-      autoplay: true,
-      speed:2000,
-      autoplaySpeed:8000,
-      arrows:false,
-      dots: true,
-      fade: true
-      });
+  var $grid = $('.grid').isotope({
+    itemSelector: '.grid-item',
+    percentPosition: true,
+    masonry: {
+      columnWidth: '.grid-sizer',
+      gutter: 30
+    }
+  });
+  // layout Isotope after each image loads
+  $grid.imagesLoaded().progress( function() {
+    $grid.isotope('layout');
+  });
 
 });
